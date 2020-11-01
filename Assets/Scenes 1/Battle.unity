@@ -2151,6 +2151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 770659191}
+  - component: {fileID: 770659192}
   m_Layer: 0
   m_Name: 3Shotgun
   m_TagString: Shotgun
@@ -2173,6 +2174,19 @@ Transform:
   m_Father: {fileID: 1645303585}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &770659192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770659190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 307711d18a82d8c409b360ce338b1736, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 1
 --- !u!1 &775467678 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 6955a90d383c1430686eabea7ea76478,
@@ -3052,6 +3066,7 @@ GameObject:
   - component: {fileID: 1202151179}
   - component: {fileID: 1202151178}
   - component: {fileID: 1202151177}
+  - component: {fileID: 1202151181}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3292,6 +3307,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -88.18, z: 0}
+--- !u!114 &1202151181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202151176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd97738caaf17e54d95c1d4da5371513, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pistol: {fileID: 1876776883}
+  assaultRifle: {fileID: 1310730090}
+  shotgun: {fileID: 770659190}
 --- !u!1001 &1212342658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3609,6 +3639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1310730091}
+  - component: {fileID: 1310730092}
   m_Layer: 0
   m_Name: 2AssaultRifle
   m_TagString: AssaultRifle
@@ -3631,6 +3662,19 @@ Transform:
   m_Father: {fileID: 1645303585}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1310730092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310730090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 828551fb3c33dcb42809e84ac9ca8071, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 0.1
 --- !u!1 &1332045504 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 6955a90d383c1430686eabea7ea76478,
@@ -4812,6 +4856,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1876776884}
+  - component: {fileID: 1876776885}
   m_Layer: 0
   m_Name: 1Pistol
   m_TagString: Pistol
@@ -4834,6 +4879,19 @@ Transform:
   m_Father: {fileID: 1645303585}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1876776885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876776883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94f448f2ab6804409670c0669bbed94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 0.6
 --- !u!1 &1901933827
 GameObject:
   m_ObjectHideFlags: 0
