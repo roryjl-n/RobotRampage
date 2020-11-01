@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class GunEquipper : MonoBehaviour
 {
+    // reference to the GameUI
+    [SerializeField]
+    GameUI gameUI;
+
     public static string activeWeaponType;
 
     //This GameObject variables reference each gun
@@ -48,16 +52,20 @@ public class GunEquipper : MonoBehaviour
         {
             loadWeapon(pistol);
             activeWeaponType = Constants.Pistol;
+            //This will update the reticle every time the player changes weapons.
+            gameUI.UpdateReticle();
         }
         else if (Input.GetKeyDown("2"))
         { 
             loadWeapon(assaultRifle);
             activeWeaponType = Constants.AssaultRifle;
+            gameUI.UpdateReticle();
         }
         else if (Input.GetKeyDown("3"))
         {
             loadWeapon(shotgun);
             activeWeaponType = Constants.Shotgun;
+            gameUI.UpdateReticle();
         }
     }
 }
