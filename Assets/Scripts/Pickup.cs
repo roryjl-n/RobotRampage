@@ -14,6 +14,10 @@ public class Pickup : MonoBehaviour
         && collider.gameObject.tag == "Player")
         {
             collider.gameObject.GetComponent<Player>().PickUpItem(type);
+
+            // Now, when the pickup collides with the player, it will signal the PickupSpawn script to start the spawn timer.
+            GetComponentInParent<PickupSpawn>().PickupWasPickedUp();
+
             Destroy(gameObject);
         }
     }
