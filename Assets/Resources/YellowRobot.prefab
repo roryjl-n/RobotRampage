@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 33000010614207476}
   - component: {fileID: 23000010260699654}
   - component: {fileID: 135000012561474720}
+  - component: {fileID: 1768510656}
   m_Layer: 0
   m_Name: RobotRampage_BotBall_v1
   m_TagString: Untagged
@@ -93,6 +94,25 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.586811
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &1768510656
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010122187620}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 75af430993d8f454ba281ed571cb21b1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1000010146077410
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,6 +346,7 @@ MonoBehaviour:
   range: 150
   fireRate: 2
   missileFireSpot: {fileID: 4000011028213440}
+  robot: {fileID: 95000013639344970}
 --- !u!1 &1000010450579988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,7 +1659,7 @@ Animator:
   m_GameObject: {fileID: 1000013250520680}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: fb900ac847b684cda925ff9b43688031, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 899ac4b043c83124482cb426f7a23df9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

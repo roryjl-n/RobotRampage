@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Robot : MonoBehaviour
 {
@@ -20,9 +21,11 @@ public class Robot : MonoBehaviour
 
     private bool isDead; // tracks whether the robot is alive or dead.
 
+    public Animator robot;
+
     private void fire()
     {
-        Debug.Log("Fire");
+        robot.Play("Fire"); //This plays the Fire animation when the robot fires a missile.
     }
 
     // Start is called before the first frame update
