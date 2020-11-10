@@ -1381,6 +1381,7 @@ GameObject:
   - component: {fileID: 54000012707587442}
   - component: {fileID: 195000011206340114}
   - component: {fileID: 82000014255239230}
+  - component: {fileID: 538030649330724402}
   m_Layer: 8
   m_Name: BlueRobot
   m_TagString: Untagged
@@ -1551,6 +1552,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &538030649330724402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013283459368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad63482949f55b4ebad344245148f33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  robotType: BlueRobot
+  health: 14
+  range: 150
+  fireRate: 2
+  missileFireSpot: {fileID: 4000010701344762}
 --- !u!1 &1000013388404492
 GameObject:
   m_ObjectHideFlags: 0
