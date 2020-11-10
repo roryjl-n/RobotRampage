@@ -5,6 +5,10 @@ using UnityEngine.AI;
 
 public class Robot : MonoBehaviour
 {
+    // missilePrefab is the prefab for the missile
+    [SerializeField]
+    GameObject missileprefab;
+
     //robotType is the type of robot: RedRobot, BlueRobot or YellowRobot. 
     [SerializeField]
     private string robotType;
@@ -25,6 +29,10 @@ public class Robot : MonoBehaviour
 
     private void fire()
     {
+        // This creates a new missilePrefab and sets its position and rotation to the robot’s firing spot.
+        GameObject missile = Instantiate(missileprefab);
+        missile.transform.position = missileFireSpot.transform.position;
+        missile.transform.rotation = missileFireSpot.transform.rotation;
         robot.Play("Fire"); //This plays the Fire animation when the robot fires a missile.
     }
 
