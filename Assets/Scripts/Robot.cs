@@ -36,6 +36,29 @@ public class Robot : MonoBehaviour
         robot.Play("Fire"); //This plays the Fire animation when the robot fires a missile.
     }
 
+    // 1 Roughly same logic as the player TakeDamage() method.
+    // It just plays a death animation before calling DestroyRobot().
+    public void TakeDamage(int amount)
+    {
+        if (isDead)
+        {
+            return;
+        }
+        health -= amount;
+        if (health <= 0)
+        {
+            isDead = true;
+            robot.Play("Die");
+            StartCoroutine("DestroyRobot");
+        }
+    }
+    // 2
+    IEnumerator DestroyRobot()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
+    }
+
     // Start is called before the first frame update
     void Start()
     {

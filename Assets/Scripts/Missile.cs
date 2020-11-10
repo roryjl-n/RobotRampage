@@ -7,6 +7,20 @@ public class Missile : MonoBehaviour
     public float speed = 30f; //how fast the missile should travel.
     public int damage = 10; // how much damage this missile will cause when it hits the player.
 
+    /* The script checks if the Missile GameObject collided with the Player GameObject based on its tag.
+       It also checks to see if if the player is still active.
+       If so, it tells the Player script to take damage and passes along its damage value.
+       Once the missile hits the player, it destroys itself. */
+    void OnCollisionEnter(Collision collider)
+    {
+        if (collider.gameObject.GetComponent<Player>() != null
+        && collider.gameObject.tag == "Player")
+        {
+            collider.gameObject.GetComponent<Player>().TakeDamage(damage);
+        }
+        Destroy(gameObject);
+    }
+
     // Coroutines -  Coroutines take methods that return IEnumerator.
     //  These determine the duration of the coroutine. 
 
