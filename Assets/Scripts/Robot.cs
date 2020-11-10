@@ -5,6 +5,13 @@ using UnityEngine.AI;
 
 public class Robot : MonoBehaviour
 {
+    [SerializeField]
+    private AudioClip deathSound;
+    [SerializeField]
+    private AudioClip fireSound;
+    [SerializeField]
+    private AudioClip weakHitSound;
+
     // missilePrefab is the prefab for the missile
     [SerializeField]
     GameObject missileprefab;
@@ -34,6 +41,8 @@ public class Robot : MonoBehaviour
         missile.transform.position = missileFireSpot.transform.position;
         missile.transform.rotation = missileFireSpot.transform.rotation;
         robot.Play("Fire"); //This plays the Fire animation when the robot fires a missile.
+
+        GetComponent<AudioSource>().PlayOneShot(fireSound); // play the missile firing sound
     }
 
     // 1 Roughly same logic as the player TakeDamage() method.
@@ -50,6 +59,11 @@ public class Robot : MonoBehaviour
             isDead = true;
             robot.Play("Die");
             StartCoroutine("DestroyRobot");
+            GetComponent<AudioSource>().PlayOneShot(deathSound);
+        }
+        else
+        {
+            GetComponent<AudioSource>().PlayOneShot(weakHitSound);
         }
     }
     // 2
