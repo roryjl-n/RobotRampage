@@ -18,6 +18,9 @@ public class GunEquipper : MonoBehaviour
     //activeGun keeps track of the currently equipped gun.
     GameObject activeGun;
 
+    [SerializeField]
+    Ammo ammo;
+
     //This method will turn off all gun GameObjects, set the passed-in GameObject as active, then update the activeGun reference. 
     private void loadWeapon(GameObject weapon)
     {
@@ -26,6 +29,9 @@ public class GunEquipper : MonoBehaviour
         shotgun.SetActive(false);
         weapon.SetActive(true);
         activeGun = weapon;
+
+        // This will update the ammunition count when the player switches guns. 
+        gameUI.SetAmmoText(ammo.GetAmmo(activeGun.tag));
     }
 
     //This simply returns the activeGun so that other scripts can read that piece of info.

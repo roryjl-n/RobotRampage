@@ -37,7 +37,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private CharacterController m_CharacterController;
         private CollisionFlags m_CollisionFlags;
         private bool m_PreviouslyGrounded;
-        private Vector3 m_OriginalCameraPosition;
+        //private Vector3 m_OriginalCameraPosition;
         private float m_StepCycle;
         private float m_NextStep;
         private bool m_Jumping;
@@ -48,7 +48,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
-            m_OriginalCameraPosition = m_Camera.transform.localPosition;
+            //m_OriginalCameraPosition = m_Camera.transform.localPosition;
             m_FovKick.Setup(m_Camera);
             m_HeadBob.Setup(m_Camera, m_StepInterval);
             m_StepCycle = 0f;
@@ -109,7 +109,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.x = desiredMove.x*speed;
             m_MoveDir.z = desiredMove.z*speed;
 
-            
+            /*
             if (m_CharacterController.isGrounded)
             {
                 m_MoveDir.y = -m_StickToGroundForce;
@@ -125,7 +125,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             else
             {
                 m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
-            }
+            }*/
             m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
 
             ProgressStepCycle(speed);
@@ -163,6 +163,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void PlayFootStepAudio()
         {
+            /*
             if (!m_CharacterController.isGrounded)
             {
                 return;
@@ -174,12 +175,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_AudioSource.PlayOneShot(m_AudioSource.clip);
             // move picked sound to index 0 so it's not picked next time
             m_FootstepSounds[n] = m_FootstepSounds[0];
-            m_FootstepSounds[0] = m_AudioSource.clip;
+            m_FootstepSounds[0] = m_AudioSource.clip; */
         }
 
 
         private void UpdateCameraPosition(float speed)
         {
+            /*
             Vector3 newCameraPosition;
             if (!m_UseHeadBob)
             {
@@ -198,7 +200,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 newCameraPosition = m_Camera.transform.localPosition;
                 newCameraPosition.y = m_OriginalCameraPosition.y - m_JumpBob.Offset();
             }
-            m_Camera.transform.localPosition = newCameraPosition;
+            m_Camera.transform.localPosition = newCameraPosition; */
         }
 
 
