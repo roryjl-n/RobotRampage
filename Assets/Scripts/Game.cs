@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.SceneManagement;
+
 public class Game : MonoBehaviour
 {
+
+    public GameObject gameOverPanel;
 
     public GameUI gameUI;
     public GameObject player;
@@ -19,6 +24,42 @@ public class Game : MonoBehaviour
     RobotSpawn[] spawns; // spawns is the array of teleporters that spawn robots each wave
 
     public int enemiesLeft; //  is a counter, which tracks how many robots are still alive.
+
+    // 1 This method frees the mouse cursor when the game is over so that the user can select something from the menu.
+    public void OnGUI()
+    {
+        if (isGameOver && Cursor.visible == false)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
+    // 2 This will be called when the game is over. It sets the timeScale to 0 so that the robots stop moving. 
+    //  It also disables the controls and displays the Game Over panel 
+    public void GameOver()
+    {
+        isGameOver = true;
+        Time.timeScale = 0;
+        player.GetComponent<FirstPersonController>().enabled = false;
+        player.GetComponent<CharacterController>().enabled = false;
+        gameOverPanel.SetActive(true);
+    }
+    // 3 When the user wants to restart the game, this method will be used to reload the scene to start the game again.
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(Constants.SceneBattle);
+        gameOverPanel.SetActive(true);
+    }
+    // 4 This will be called when the user selects the Exit button. It quits the app, but only if its being run from a build.
+    public void Exit()
+    {
+        Application.Quit();
+    }
+    // 5  This loads the Menu scene.
+    public void MainMenu()
+    {
+        SceneManager.LoadScene(Constants.SceneMenu);
+    }
 
     // 1 Initialize the singleton and call SpawnRobots().
     void Start()

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Game game;
+    public AudioClip playerDead;
+
     public int health;
     public int armor; // Once armor reaches zero, then the player receives full damage.
 
@@ -41,7 +44,10 @@ public class Player : MonoBehaviour
         gameUI.SetHealthText(health); // updates the health as it changes in the UI.
         if (health <= 0)
         {
-            Debug.Log("GameOver");
+            //Debug.Log("GameOver");
+            //PLays playerDead audio and then call GameOver on the Game script.
+            GetComponent<AudioSource>().PlayOneShot(playerDead);
+            game.GameOver();
         }
     }
 
