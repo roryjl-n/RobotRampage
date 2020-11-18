@@ -74,14 +74,18 @@ public class Player : MonoBehaviour
     private void pickupAssaultRifleAmmo()
     {
         ammo.AddAmmo(Constants.AssaultRifle, 50);
+        ammo.AddAmmo(Constants.SniperRifle, 1);
 
         // First, this alerts the player of the ammunition pickup in the UI. 
         // Then, the code checks to see if the active gun matches the assault rifle before setting the ammo count. 
-        gameUI.SetPickUpText("Assault rifle ammo picked up + 50 ammo");
-        if (gunEquipper.GetActiveWeapon().tag == Constants.AssaultRifle)
+        gameUI.SetPickUpText("Assault and Sniper ammo picked up + 51 ammo");
+        
+        if (gunEquipper.GetActiveWeapon().tag == Constants.AssaultRifle || gunEquipper.GetActiveWeapon().tag == Constants.SniperRifle)
         {
             gameUI.SetAmmoText(ammo.GetAmmo(Constants.AssaultRifle));
+            gameUI.SetAmmoText(ammo.GetAmmo(Constants.SniperRifle));
         }
+        gameUI.SetPickUpText("Assault and Sniper ammo picked up + 51 ammo");
     }
     private void pickupPisolAmmo()
     {

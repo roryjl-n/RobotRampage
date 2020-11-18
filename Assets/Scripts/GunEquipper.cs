@@ -14,6 +14,7 @@ public class GunEquipper : MonoBehaviour
     public GameObject pistol;
     public GameObject assaultRifle;
     public GameObject shotgun;
+    public GameObject sniperRifle;
 
     //activeGun keeps track of the currently equipped gun.
     GameObject activeGun;
@@ -27,6 +28,7 @@ public class GunEquipper : MonoBehaviour
         pistol.SetActive(false);
         assaultRifle.SetActive(false);
         shotgun.SetActive(false);
+        sniperRifle.SetActive(false);
         weapon.SetActive(true);
         activeGun = weapon;
 
@@ -71,6 +73,12 @@ public class GunEquipper : MonoBehaviour
         {
             loadWeapon(shotgun);
             activeWeaponType = Constants.Shotgun;
+            gameUI.UpdateReticle();
+        }
+        else if (Input.GetKeyDown("4"))
+        {
+            loadWeapon(sniperRifle);
+            activeWeaponType = Constants.SniperRifle;
             gameUI.UpdateReticle();
         }
     }

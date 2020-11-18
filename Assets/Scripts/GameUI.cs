@@ -53,6 +53,9 @@ public class GameUI : MonoBehaviour
             case Constants.AssaultRifle:
                 reticle.sprite = blueReticle;
                 break;
+            case Constants.SniperRifle:
+                reticle.sprite = blueReticle;
+                break;
             default:
                 return;
         }

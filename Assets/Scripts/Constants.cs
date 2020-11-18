@@ -12,6 +12,7 @@ public class Constants
     public const string Pistol = "Pistol";
     public const string Shotgun = "Shotgun";
     public const string AssaultRifle = "AssaultRifle";
+    public const string SniperRifle = "SniperRifle";
     // Robot Types
     public const string RedRobot = "RedRobot";
     public const string BlueRobot = "BlueRobot";
@@ -20,6 +21,7 @@ public class Constants
     public const int PickUpPistolAmmo = 1;
     public const int PickUpAssaultRifleAmmo = 2;
     public const int PickUpShotgunAmmo = 3;
+    public const int PickUpSniperRifleAmmo = 6;
     public const int PickUpHealth = 4;
     public const int PickUpArmor = 5;
     // Misc
@@ -27,12 +29,13 @@ public class Constants
     public const float CameraDefaultZoom = 60f;
 
     //This keeps track of all possible pickup types.
-    public static readonly int[] AllPickupTypes = new int[5]
+    public static readonly int[] AllPickupTypes = new int[6]
     {
         PickUpPistolAmmo,
         PickUpAssaultRifleAmmo,
         PickUpShotgunAmmo,
         PickUpHealth,
-        PickUpArmor
+        PickUpArmor,
+        PickUpSniperRifleAmmo
     };
 }
